@@ -128,22 +128,25 @@
         }
 
         .photo-container {
-            width: 280px;
-            height: 280px;
-            background: var(--rosa-fuerte);
-            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 20px 40px var(--sombra);
             position: relative;
-            border: 8px solid var(--crema);
+            /* quitamos fondo, bordes y forma redonda */
+            background: none;
+            border: none;
+            border-radius: 0;
+            width: auto;
+            height: auto;
         }
 
+
         .photo-avatar {
-            width: 90%;        /* o 100%, según qué tan grande la quieras */
-            height: auto;      /* mantiene proporción real */
-            object-fit: contain; /* NO recorta, ajusta la imagen completa dentro del círculo */
+            width: 320px;   /* puedes poner 350px, 400px o 100% si quieres aún más grande */
+            height: auto;
+            object-fit: contain;
+            border-radius: 0;  /* por si algo la recortaba */
         }
 
 
