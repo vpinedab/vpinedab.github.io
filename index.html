@@ -140,11 +140,12 @@
             border: 8px solid var(--crema);
         }
 
-        .photo-container::before {
-            content: '📸';
-            font-size: 4rem;
-            opacity: 0.7;
+        .photo-avatar {
+            width: 90%;        /* o 100%, según qué tan grande la quieras */
+            height: auto;      /* mantiene proporción real */
+            object-fit: contain; /* NO recorta, ajusta la imagen completa dentro del círculo */
         }
+
 
         /* Estrellas decorativas alrededor de la foto */
         .star {
@@ -624,7 +625,9 @@
                 </p>
             </div>
             <div class="header-image">
-                <div class="photo-container"></div>
+                <div class="photo-container">
+                    <img src="img/valentina-avatar.png" alt="Valentina avatar" class="photo-avatar">
+                </div>
                 <span class="star star-1">✦</span>
                 <span class="star star-2">✦</span>
                 <span class="star star-3">✦</span>
