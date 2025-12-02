@@ -134,7 +134,7 @@
             box-shadow: 0 20px 40px var(--sombra);
             position: relative;
             /* quitamos fondo, bordes y forma redonda */
-            background: none;
+            background: transparent;
             border: none;
             border-radius: 0;
             width: auto;
@@ -146,7 +146,7 @@
             width: 320px;   /* puedes poner 350px, 400px o 100% si quieres aún más grande */
             height: auto;
             object-fit: contain;
-            border-radius: 0;  /* por si algo la recortaba */
+            background: transparent;  /* 👈 por si acaso */
         }
 
 
@@ -629,7 +629,7 @@
             </div>
             <div class="header-image">
                 <div class="photo-container">
-                    <img src="img/valentina-avatar.png" alt="Valentina avatar" class="photo-avatar">
+                    <img src="img/valentina-avatar1.jpeg" alt="Valentina avatar" class="photo-avatar">
                 </div>
                 <span class="star star-1">✦</span>
                 <span class="star star-2">✦</span>
