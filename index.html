@@ -521,13 +521,19 @@
             text-align: center;
         }
 
-        .contact-content {
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-box {
             background: white;
             padding: 3rem 2rem;
             border-radius: 30px;
             box-shadow: 0 10px 30px var(--sombra);
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         .contact-item {
@@ -574,6 +580,68 @@
             text-decoration: underline;
         }
 
+        .contact-form-box {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px var(--sombra);
+            text-align: left;
+        }
+
+        .contact-form-box h3 {
+            color: var(--azul-marino);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        .contact-form-field {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            margin-bottom: 1rem;
+            border: 2px solid var(--crema);
+            border-radius: 15px;
+            font-family: "Poppins", "Segoe UI", system-ui, sans-serif;
+            font-size: 0.95rem;
+            color: var(--texto-oscuro);
+            background: var(--crema);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .contact-form-field:focus {
+            outline: none;
+            border-color: var(--rosa-fuerte);
+            background: white;
+        }
+
+        .contact-form-field::placeholder {
+            color: rgba(44, 62, 80, 0.5);
+        }
+
+        textarea.contact-form-field {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form-button {
+            width: 100%;
+            padding: 0.9rem 1.5rem;
+            background: var(--azul-marino);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-family: "Poppins", "Segoe UI", system-ui, sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .contact-form-button:hover {
+            background: var(--rosa-fuerte);
+            transform: translateY(-2px);
+        }
+
         /* ===== FOOTER ===== */
         footer {
             background-color: var(--azul-marino);
@@ -606,6 +674,11 @@
             .intro-text {
                 order: 3;
             }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
 
 
@@ -621,8 +694,14 @@
 
             .about-content,
             .education-content,
-            .contact-content {
+            .contact-box,
+            .contact-form-box {
                 padding: 1.5rem;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .skill-card {
@@ -915,27 +994,45 @@
         <!-- Contact Section -->
         <section id="contact">
             <h2>Contacto</h2>
-            <div class="contact-content">
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <div class="contact-info">
-                        <strong>Email</strong><br>
-                        <a href="mailto:valentinapinedabarrn@gmail.com">valentinapinedabarrn@gmail.com</a>
+            <div class="contact-wrapper">
+                <div class="contact-box">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-info">
+                            <strong>Email</strong><br>
+                            <a href="mailto:valentinapinedabarrn@gmail.com">valentinapinedabarrn@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💻</div>
+                        <div class="contact-info">
+                            <strong>GitHub</strong><br>
+                            <a href="https://github.com/vpinedab" target="_blank" rel="noopener noreferrer">github.com/vpinedab</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-info">
+                            <strong>LinkedIn</strong><br>
+                            <a href="https://www.linkedin.com/in/valentina-pineda-barr%C3%B3n-313793366?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">Ver perfil</a>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <div class="contact-icon">💻</div>
-                    <div class="contact-info">
-                        <strong>GitHub</strong><br>
-                        <a href="https://github.com/vpinedab" target="_blank" rel="noopener noreferrer">github.com/vpinedab</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">💼</div>
-                    <div class="contact-info">
-                        <strong>LinkedIn</strong><br>
-                        <a href="https://www.linkedin.com/in/valentina-pineda-barr%C3%B3n-313793366?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">Ver perfil</a>
-                    </div>
+                
+                <div class="contact-form-box">
+                    <h3>Déjame un comentario o pregunta</h3>
+                    <form>
+                        <input type="email" 
+                               class="contact-form-field" 
+                               placeholder="Tu correo electrónico..." 
+                               required>
+                        <textarea class="contact-form-field" 
+                                  placeholder="Tu mensaje va aquí..." 
+                                  required></textarea>
+                        <button type="submit" class="contact-form-button">
+                            Enviar mensaje
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
