@@ -409,6 +409,41 @@
             box-shadow: 0 3px 10px rgba(255, 110, 168, 0.3);
         }
 
+        .certifications {
+            background: white;
+            padding: 2rem;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px var(--sombra);
+            margin-bottom: 3rem;
+        }
+
+        .certifications h3 {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .cert-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cert-list li {
+            margin-bottom: 0.7rem;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .cert-list li::before {
+            content: "✔";
+            color: var(--rosa-fuerte);
+            font-weight: 700;
+        }
+
         /* ===== PROJECTS ===== */
         #projects {
             padding: 2rem 0;
@@ -460,6 +495,24 @@
             font-size: 0.85rem;
             font-weight: 500;
             border: 1px solid var(--rosa-fuerte);
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.6rem 1.2rem;
+            background: var(--azul-marino);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .project-link:hover {
+            background: var(--rosa-fuerte);
+            transform: translateY(-2px);
         }
 
         /* ===== CONTACT ===== */
@@ -603,9 +656,6 @@
                 <div class="photo-container">
                     <img src="img/valentina-avatar.jpeg" alt="Valentina avatar" class="photo-avatar">
                 </div>
-            </div>
-        </div>
-        
                 <span class="star star-1">✦</span>
                 <span class="star star-2">✦</span>
                 <span class="star star-3">✦</span>
@@ -738,6 +788,14 @@
                 </div>                
             </div>
             
+            <div class="certifications">
+                <h3>Certificaciones</h3>
+                <ul class="cert-list">
+                    <li><strong>Pandas</strong> · Certificación en análisis de datos con Python</li>
+                    <li><strong>Docker</strong> · Certificación en uso de contenedores y despliegue</li>
+                </ul>
+            </div>
+            
             <div class="soft-skills">
                 <h3>Habilidades Interpersonales</h3>
                 <div class="soft-skills-list">
@@ -784,6 +842,12 @@
                         <span class="tech-tag">Data Analysis</span>
                         <span class="tech-tag">Statistics</span>
                     </div>
+                    <a class="project-link" 
+                       href="https://github.com/valpb666/Proyecto-Base-de-Datos" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        Ver repositorio en GitHub
+                    </a>
                 </div>
                 <div class="project-card">
                     <h3>Implementación de una calculadora en Java con interfaz gráfica</h3>
