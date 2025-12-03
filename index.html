@@ -326,6 +326,115 @@
             margin-bottom: 0.3rem;
         }
 
+        /* ===== MUSIC SECTION ===== */
+        .music-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--crema);
+        }
+
+        .turntable {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            flex-shrink: 0;
+        }
+
+        .turntable-base {
+            width: 130px;
+            height: 130px;
+            background: linear-gradient(135deg, var(--azul-marino), #1a4a7a);
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(20, 59, 107, 0.3);
+            position: relative;
+        }
+
+        .turntable-base::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--crema);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .vinyl {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 110px;
+            height: 110px;
+            background: radial-gradient(circle, #1a1a1a 0%, #2a2a2a 35%, #1a1a1a 36%, #1a1a1a 100%);
+            border-radius: 50%;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+            animation: spin 8s linear infinite;
+        }
+
+        .vinyl::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: var(--rosa-fuerte);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 5px var(--rosa-fuerte);
+        }
+
+        .turntable-arm {
+            position: absolute;
+            width: 2px;
+            height: 45px;
+            background: var(--azul-marino);
+            top: 15px;
+            left: 65px;
+            transform-origin: bottom center;
+            transform: rotate(-20deg);
+            border-radius: 2px;
+        }
+
+        .turntable-arm::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--azul-marino);
+            border-radius: 50%;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .spotify-embed {
+            flex: 1;
+            max-width: 320px;
+            min-width: 280px;
+        }
+
+        .spotify-embed iframe {
+            width: 100%;
+            height: 152px;
+        }
+
         /* ===== EDUCATION ===== */
         #education {
             background: linear-gradient(135deg, var(--rosa-fuerte) 0%, #ff8bc0 100%);
@@ -878,6 +987,16 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
+            /* Music section: apilar en móvil */
+            .music-section {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .spotify-embed {
+                max-width: 100%;
+                width: 100%;
+            }
 
             /* Apilamos todo */
             .header-content {
@@ -1032,6 +1151,55 @@
             .fact strong {
                 font-size: 0.9rem;
                 margin-bottom: 0.2rem;
+            }
+
+            /* Music section más compacta en móvil */
+            .music-section {
+                margin-top: 1.5rem;
+                padding-top: 1.5rem;
+                gap: 1.2rem;
+            }
+
+            .turntable {
+                width: 100px;
+                height: 100px;
+            }
+
+            .turntable-base {
+                width: 100px;
+                height: 100px;
+            }
+
+            .turntable-base::before {
+                width: 15px;
+                height: 15px;
+            }
+
+            .vinyl {
+                width: 85px;
+                height: 85px;
+                top: 7.5px;
+                left: 7.5px;
+            }
+
+            .vinyl::before {
+                width: 12px;
+                height: 12px;
+            }
+
+            .turntable-arm {
+                height: 35px;
+                top: 12px;
+                left: 50px;
+            }
+
+            .spotify-embed {
+                max-width: 100%;
+                min-width: 100%;
+            }
+
+            .spotify-embed iframe {
+                height: 132px;
             }
 
             /* Education section más compacta */
@@ -1329,6 +1497,18 @@
                     <div class="fact">
                         <strong>Idiomas</strong>
                         Español (nativo), Inglés (intermedio/avanzado)
+                    </div>
+                </div>
+                
+                <!-- Music Section -->
+                <div class="music-section">
+                    <div class="turntable">
+                        <div class="turntable-base"></div>
+                        <div class="vinyl"></div>
+                        <div class="turntable-arm"></div>
+                    </div>
+                    <div class="spotify-embed">
+                        <iframe style="border-radius: 12px;" src="https://open.spotify.com/playlist/2vgWmJlZ9U8XgZ1mepKBXM?si=V01_5yf6StCXTyTNLQvvBw&pi=VjgyGqadSmWqm" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
