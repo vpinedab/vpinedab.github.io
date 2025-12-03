@@ -143,6 +143,7 @@
 
         .photo-avatar {
             width: 400px;   /* puedes poner 350px, 400px o 100% si quieres aún más grande */
+            max-width: 100%;
             height: auto;
             object-fit: contain;
             background: transparent;  /* 👈 por si acaso */
@@ -529,7 +530,7 @@
             font-size: 0.9rem;
         }
 
-        /* ===== RESPONSIVE ===== */
+                /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .header-content {
                 grid-template-columns: 1fr;
@@ -537,13 +538,14 @@
                 text-align: center;
             }
 
-            .header-image {
-                order: -1;
+            /* Texto primero, imagen después en móvil */
+            .header-text {
+                order: 1;
             }
 
-            .photo-container {
-                width: 220px;
-                height: 220px;
+            .header-image {
+                order: 2;
+                margin-top: 1rem;
             }
 
             nav ul {
@@ -584,8 +586,17 @@
             .contact-info {
                 text-align: center;
             }
+
+            h1 {
+                font-size: 2.3rem;
+            }
+
+            .subtitle {
+                font-size: 1.3rem;
+            }
         }
 
+        /* Teléfonos pequeños */
         @media (max-width: 480px) {
             header {
                 padding: 1rem 3%;
@@ -609,7 +620,8 @@
                 font-size: 2rem;
             }
         }
-    </style>
+        </style>
+
 </head>
 <body>
     <!-- Header / Hero Section -->
