@@ -215,6 +215,36 @@
             color: var(--azul-marino);
             margin-bottom: 2rem;
             font-weight: 700;
+            position: relative;
+        }
+
+        /* Decoraciones en títulos de sección */
+        h2::before {
+            content: '✦';
+            position: absolute;
+            font-size: 1.5rem;
+            color: var(--rosa-fuerte);
+            opacity: 0.1;
+            top: -5px;
+            left: -35px;
+            z-index: 0;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            background: var(--azul-marino);
+            border-radius: 50%;
+            opacity: 0.06;
+            top: -10px;
+            right: -45px;
+            z-index: 0;
+        }
+
+        h2 {
+            z-index: 1;
         }
 
         h3 {
@@ -239,6 +269,31 @@
             border-radius: 30px;
             box-shadow: 0 10px 30px var(--sombra);
             max-width: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decoración en esquina superior derecha de about-content */
+        .about-content::before {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: var(--rosa-fuerte);
+            border-radius: 50%;
+            opacity: 0.1;
+            top: -30px;
+            right: -30px;
+        }
+
+        .about-content::after {
+            content: '✦';
+            position: absolute;
+            font-size: 2rem;
+            color: var(--azul-marino);
+            opacity: 0.08;
+            bottom: 20px;
+            right: 30px;
         }
 
         .about-content p {
@@ -293,11 +348,42 @@
             margin-bottom: 2.5rem;
         }
 
+        /* Ocultar decoraciones por defecto en h2 de education porque tiene color blanco */
+        #education h2::before,
+        #education h2::after {
+            display: none;
+        }
+
+        /* Decoración adicional para education */
+        #education::after {
+            content: '✦';
+            position: absolute;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.15);
+            bottom: 20px;
+            left: 30px;
+            z-index: 1;
+        }
+
         .education-content {
             max-width: 700px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
+        }
+
+        /* Decoración en esquina inferior de education-content */
+        .education-content::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            opacity: 0.3;
+            bottom: -35px;
+            left: -35px;
+            z-index: 0;
         }
 
         .education-item {
@@ -344,6 +430,32 @@
         /* ===== SKILLS ===== */
         #skills {
             padding: 2rem 0;
+            position: relative;
+        }
+
+        /* Decoración en esquina de skills */
+        #skills::before {
+            content: '';
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            background: var(--rosa-fuerte);
+            border-radius: 50%;
+            opacity: 0.08;
+            top: 50px;
+            right: 10%;
+            z-index: 0;
+        }
+
+        #skills::after {
+            content: '✦';
+            position: absolute;
+            font-size: 2.5rem;
+            color: var(--azul-marino);
+            opacity: 0.1;
+            bottom: 100px;
+            left: 5%;
+            z-index: 0;
         }
 
         .skills-grid {
@@ -351,6 +463,8 @@
             grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
             gap: 1.5rem;
             margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
         }
 
         .skill-card {
@@ -385,6 +499,8 @@
             padding: 2rem;
             border-radius: 25px;
             box-shadow: 0 5px 15px var(--sombra);
+            position: relative;
+            z-index: 1;
         }
 
         .soft-skills h3 {
@@ -415,6 +531,8 @@
             border-radius: 25px;
             box-shadow: 0 5px 15px var(--sombra);
             margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
         }
 
         .certifications h3 {
@@ -447,12 +565,56 @@
         /* ===== PROJECTS ===== */
         #projects {
             padding: 2rem 0;
+            position: relative;
+        }
+
+        /* Decoración flotante en projects */
+        .projects-decor {
+            position: absolute;
+            font-size: 2.2rem;
+            color: var(--rosa-fuerte);
+            opacity: 0.1;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .projects-decor-1 {
+            top: 100px;
+            right: 5%;
+        }
+
+        .projects-decor-2 {
+            bottom: 50px;
+            left: 8%;
+        }
+
+        .projects-decor-circle {
+            position: absolute;
+            width: 65px;
+            height: 65px;
+            background: var(--azul-marino);
+            border-radius: 50%;
+            opacity: 0.08;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .projects-decor-circle-1 {
+            top: 200px;
+            left: 3%;
+        }
+
+        .projects-decor-circle-2 {
+            bottom: 100px;
+            right: 10%;
         }
 
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         .project-card {
@@ -519,6 +681,30 @@
         #contact {
             padding: 2rem 0;
             text-align: center;
+            position: relative;
+        }
+
+        /* Decoración en esquina de contact */
+        #contact::before {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: var(--azul-marino);
+            border-radius: 50%;
+            opacity: 0.08;
+            top: 50px;
+            left: 5%;
+        }
+
+        #contact::after {
+            content: '✦';
+            position: absolute;
+            font-size: 2.2rem;
+            color: var(--rosa-fuerte);
+            opacity: 0.1;
+            bottom: 50px;
+            right: 8%;
         }
 
         .contact-wrapper {
@@ -527,6 +713,8 @@
             gap: 2rem;
             max-width: 1000px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-box {
@@ -534,6 +722,33 @@
             padding: 3rem 2rem;
             border-radius: 30px;
             box-shadow: 0 10px 30px var(--sombra);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decoración en esquina inferior izquierda de contact-box */
+        .contact-box::before {
+            content: '';
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            background: var(--rosa-fuerte);
+            border-radius: 50%;
+            opacity: 0.1;
+            bottom: -25px;
+            left: -25px;
+            z-index: 0;
+        }
+
+        .contact-box::after {
+            content: '✦';
+            position: absolute;
+            font-size: 2rem;
+            color: var(--azul-marino);
+            opacity: 0.08;
+            top: 20px;
+            left: 20px;
+            z-index: 0;
         }
 
         .contact-item {
@@ -546,6 +761,8 @@
             background: var(--crema);
             border-radius: 20px;
             transition: transform 0.3s ease;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-item:hover {
@@ -586,6 +803,38 @@
             border-radius: 30px;
             box-shadow: 0 10px 30px var(--sombra);
             text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decoración en esquina superior derecha del formulario */
+        .contact-form-box::before {
+            content: '✦';
+            position: absolute;
+            font-size: 3.5rem;
+            color: var(--rosa-fuerte);
+            opacity: 0.1;
+            top: 10px;
+            right: 15px;
+            z-index: 0;
+        }
+
+        .contact-form-box::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: var(--azul-marino);
+            border-radius: 50%;
+            opacity: 0.08;
+            bottom: 20px;
+            right: 40px;
+            z-index: 0;
+        }
+
+        .contact-form-box form {
+            position: relative;
+            z-index: 1;
         }
 
         .contact-form-box h3 {
@@ -678,6 +927,32 @@
             .contact-wrapper {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+
+            /* Ocultar decoraciones en títulos en móvil para mejor legibilidad */
+            h2::before,
+            h2::after {
+                display: none;
+            }
+
+            /* Ocultar decoraciones flotantes en móvil */
+            .projects-decor,
+            .projects-decor-circle {
+                display: none;
+            }
+
+            #skills::before,
+            #skills::after {
+                display: none;
+            }
+
+            #education::after {
+                display: none;
+            }
+
+            #contact::before,
+            #contact::after {
+                display: none;
             }
         }
 
@@ -906,6 +1181,10 @@
         <!-- Projects Section -->
         <section id="projects">
             <h2>Proyectos</h2>
+            <span class="projects-decor projects-decor-1">✦</span>
+            <span class="projects-decor projects-decor-2">✦</span>
+            <span class="projects-decor-circle projects-decor-circle-1"></span>
+            <span class="projects-decor-circle projects-decor-circle-2"></span>
             <div class="projects-grid">
                 <div class="project-card">
                     <h3>Análisis de datos de Ecobici CDMX con PySpark y Pandas</h3>
