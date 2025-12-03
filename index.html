@@ -216,17 +216,18 @@
             margin-bottom: 2rem;
             font-weight: 700;
             position: relative;
+            z-index: 1;
         }
 
-        /* Decoraciones en títulos de sección */
+        /* Decoraciones en títulos de sección - movidas más lejos para no interferir */
         h2::before {
             content: '✦';
             position: absolute;
             font-size: 1.5rem;
             color: var(--rosa-fuerte);
             opacity: 0.1;
-            top: -5px;
-            left: -35px;
+            top: -10px;
+            left: -50px;
             z-index: 0;
         }
 
@@ -238,8 +239,8 @@
             background: var(--azul-marino);
             border-radius: 50%;
             opacity: 0.06;
-            top: -10px;
-            right: -45px;
+            top: -15px;
+            right: -60px;
             z-index: 0;
         }
 
@@ -257,6 +258,7 @@
         /* ===== ABOUT ME ===== */
         #about {
             padding: 2rem 0;
+            position: relative;
         }
 
         #about h2 {
@@ -270,11 +272,11 @@
             box-shadow: 0 10px 30px var(--sombra);
             max-width: 800px;
             position: relative;
-            overflow: hidden;
+            z-index: 1;
         }
 
-        /* Decoración en esquina superior derecha de about-content */
-        .about-content::before {
+        /* Decoraciones movidas fuera del contenedor, ahora en la sección #about */
+        #about::before {
             content: '';
             position: absolute;
             width: 80px;
@@ -282,18 +284,20 @@
             background: var(--rosa-fuerte);
             border-radius: 50%;
             opacity: 0.1;
-            top: -30px;
-            right: -30px;
+            top: 20px;
+            right: 10%;
+            z-index: 0;
         }
 
-        .about-content::after {
+        #about::after {
             content: '✦';
             position: absolute;
             font-size: 2rem;
             color: var(--azul-marino);
             opacity: 0.08;
-            bottom: 20px;
-            right: 30px;
+            bottom: 50px;
+            left: 5%;
+            z-index: 0;
         }
 
         .about-content p {
@@ -433,7 +437,7 @@
             position: relative;
         }
 
-        /* Decoración en esquina de skills */
+        /* Decoración en esquina de skills - ajustadas para estar fuera del contenido */
         #skills::before {
             content: '';
             position: absolute;
@@ -442,8 +446,8 @@
             background: var(--rosa-fuerte);
             border-radius: 50%;
             opacity: 0.08;
-            top: 50px;
-            right: 10%;
+            top: 20px;
+            right: 5%;
             z-index: 0;
         }
 
@@ -453,8 +457,8 @@
             font-size: 2.5rem;
             color: var(--azul-marino);
             opacity: 0.1;
-            bottom: 100px;
-            left: 5%;
+            bottom: 50px;
+            left: 3%;
             z-index: 0;
         }
 
@@ -568,7 +572,7 @@
             position: relative;
         }
 
-        /* Decoración flotante en projects */
+        /* Decoración flotante en projects - ajustadas para estar bien distribuidas fuera del contenido */
         .projects-decor {
             position: absolute;
             font-size: 2.2rem;
@@ -579,13 +583,13 @@
         }
 
         .projects-decor-1 {
-            top: 100px;
-            right: 5%;
+            top: 50px;
+            right: 3%;
         }
 
         .projects-decor-2 {
-            bottom: 50px;
-            left: 8%;
+            bottom: 30px;
+            left: 5%;
         }
 
         .projects-decor-circle {
@@ -600,13 +604,13 @@
         }
 
         .projects-decor-circle-1 {
-            top: 200px;
-            left: 3%;
+            top: 150px;
+            left: 2%;
         }
 
         .projects-decor-circle-2 {
-            bottom: 100px;
-            right: 10%;
+            bottom: 80px;
+            right: 8%;
         }
 
         .projects-grid {
@@ -684,7 +688,7 @@
             position: relative;
         }
 
-        /* Decoración en esquina de contact */
+        /* Decoraciones movidas fuera de los contenedores, distribuidas alrededor de la sección */
         #contact::before {
             content: '';
             position: absolute;
@@ -693,8 +697,9 @@
             background: var(--azul-marino);
             border-radius: 50%;
             opacity: 0.08;
-            top: 50px;
-            left: 5%;
+            top: 30px;
+            left: 3%;
+            z-index: 0;
         }
 
         #contact::after {
@@ -703,8 +708,34 @@
             font-size: 2.2rem;
             color: var(--rosa-fuerte);
             opacity: 0.1;
-            bottom: 50px;
-            right: 8%;
+            bottom: 30px;
+            right: 5%;
+            z-index: 0;
+        }
+
+        /* Decoraciones adicionales movidas desde contact-box y contact-form-box */
+        .contact-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            background: var(--rosa-fuerte);
+            border-radius: 50%;
+            opacity: 0.1;
+            top: -20px;
+            left: -30px;
+            z-index: 0;
+        }
+
+        .contact-wrapper::after {
+            content: '✦';
+            position: absolute;
+            font-size: 2.5rem;
+            color: var(--azul-marino);
+            opacity: 0.08;
+            bottom: -15px;
+            right: -20px;
+            z-index: 0;
         }
 
         .contact-wrapper {
@@ -723,32 +754,7 @@
             border-radius: 30px;
             box-shadow: 0 10px 30px var(--sombra);
             position: relative;
-            overflow: hidden;
-        }
-
-        /* Decoración en esquina inferior izquierda de contact-box */
-        .contact-box::before {
-            content: '';
-            position: absolute;
-            width: 75px;
-            height: 75px;
-            background: var(--rosa-fuerte);
-            border-radius: 50%;
-            opacity: 0.1;
-            bottom: -25px;
-            left: -25px;
-            z-index: 0;
-        }
-
-        .contact-box::after {
-            content: '✦';
-            position: absolute;
-            font-size: 2rem;
-            color: var(--azul-marino);
-            opacity: 0.08;
-            top: 20px;
-            left: 20px;
-            z-index: 0;
+            z-index: 1;
         }
 
         .contact-item {
@@ -803,36 +809,6 @@
             border-radius: 30px;
             box-shadow: 0 10px 30px var(--sombra);
             text-align: left;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Decoración en esquina superior derecha del formulario */
-        .contact-form-box::before {
-            content: '✦';
-            position: absolute;
-            font-size: 3.5rem;
-            color: var(--rosa-fuerte);
-            opacity: 0.1;
-            top: 10px;
-            right: 15px;
-            z-index: 0;
-        }
-
-        .contact-form-box::after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background: var(--azul-marino);
-            border-radius: 50%;
-            opacity: 0.08;
-            bottom: 20px;
-            right: 40px;
-            z-index: 0;
-        }
-
-        .contact-form-box form {
             position: relative;
             z-index: 1;
         }
