@@ -424,15 +424,67 @@
             }
         }
 
-        .spotify-embed {
+        .music-list {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
             max-width: 320px;
-            min-width: 280px;
         }
 
-        .spotify-embed iframe {
-            width: 100%;
-            height: 152px;
+        .song-card {
+            background: white;
+            border-radius: 18px;
+            padding: 0.9rem 1rem;
+            box-shadow: 0 4px 12px var(--sombra);
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .song-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px var(--sombra);
+        }
+
+        .song-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .song-info h4 {
+            font-size: 0.95rem;
+            color: var(--azul-marino);
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .song-info p {
+            font-size: 0.85rem;
+            margin: 0 0 0.4rem 0;
+            color: var(--texto-oscuro);
+            opacity: 0.8;
+        }
+
+        .song-link {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            background: var(--azul-marino);
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s ease, transform 0.2s ease;
+            width: fit-content;
+            margin-top: 0.2rem;
+        }
+
+        .song-link:hover {
+            background: var(--rosa-fuerte);
+            transform: translateY(-1px);
         }
 
         /* ===== EDUCATION ===== */
@@ -993,7 +1045,7 @@
                 gap: 1.5rem;
             }
 
-            .spotify-embed {
+            .music-list {
                 max-width: 100%;
                 width: 100%;
             }
@@ -1193,13 +1245,28 @@
                 left: 50px;
             }
 
-            .spotify-embed {
+            .music-list {
                 max-width: 100%;
                 min-width: 100%;
+                gap: 0.7rem;
             }
 
-            .spotify-embed iframe {
-                height: 132px;
+            .song-card {
+                padding: 0.8rem;
+                border-radius: 15px;
+            }
+
+            .song-info h4 {
+                font-size: 0.9rem;
+            }
+
+            .song-info p {
+                font-size: 0.8rem;
+            }
+
+            .song-link {
+                font-size: 0.75rem;
+                padding: 0.3rem 0.7rem;
             }
 
             /* Education section más compacta */
@@ -1507,8 +1574,34 @@
                         <div class="vinyl"></div>
                         <div class="turntable-arm"></div>
                     </div>
-                    <div class="spotify-embed">
-                        <iframe style="border-radius: 12px;" src="https://open.spotify.com/playlist/2vgWmJlZ9U8XgZ1mepKBXM?si=V01_5yf6StCXTyTNLQvvBw&pi=VjgyGqadSmWqm" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <div class="music-list">
+                        <div class="song-card">
+                            <div class="song-info">
+                                <h4>What Once Was</h4>
+                                <p>Her's</p>
+                                <a href="https://open.spotify.com/intl-es/track/1XrSjpNe49IiygZfzb74pk?si=d4a6c4fae0e146b6" target="_blank" rel="noopener noreferrer" class="song-link">
+                                    Escuchar en Spotify
+                                </a>
+                            </div>
+                        </div>
+                        <div class="song-card">
+                            <div class="song-info">
+                                <h4>A Cielo Abierto (El Sol No Tiene Enemigos) [Bonus Track]</h4>
+                                <p>Mi Amigo Invencible</p>
+                                <a href="https://open.spotify.com/intl-es/track/2GY9OvwxUcYb4lznPqmqvX?si=204c5e2c6c234337" target="_blank" rel="noopener noreferrer" class="song-link">
+                                    Escuchar en Spotify
+                                </a>
+                            </div>
+                        </div>
+                        <div class="song-card">
+                            <div class="song-info">
+                                <h4>Infinite Love</h4>
+                                <p>Emile Mosseri</p>
+                                <a href="https://open.spotify.com/intl-es/track/6SIUbcqmVn4zTVDLeY5mMC?si=e7d2256602134c67" target="_blank" rel="noopener noreferrer" class="song-link">
+                                    Escuchar en Spotify
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
